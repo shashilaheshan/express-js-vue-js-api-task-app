@@ -1,29 +1,36 @@
 <template>
-  <div class="row">
-    <div class="col-md-6">
-      <h4>Add Task</h4>
+  <div>
+    <div class="row">
+      <div class="col-md-6">
+        <h4>Add Task</h4>
 
-      <div class="form-group ml-5">
-        <input type="text" class="form-control" v-model="task" v-bind:placeholder="placeholder" />
+        <div class="form-group ml-5">
+          <input type="text" class="form-control" v-model="task" v-bind:placeholder="placeholder" />
 
-        <input
-          type="button"
-          @click="addTask()"
-          class="btn btn-success mt-2"
-          value="SAVE"
-          :disabled="task==''||task==null"
-        />
+          <input
+            type="button"
+            @click="addTask()"
+            class="btn btn-success mt-2"
+            value="SAVE"
+            :disabled="task==''||task==null"
+          />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <h1>All Tasks</h1>
+        <div class="row" v-for="task in tasks">
+          <div class="col-md-6">
+            <h1>
+              {{task.task}}
+              <button class="btn btn-danger" @click="deleteTask(task.id)">DELETE</button>
+            </h1>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="col-md-6">
-      <h1>All Tasks</h1>
-      <div class="row" v-for="task in tasks">
-        <div class="col-md-6">
-          <h1>
-            {{task.task}}
-            <button class="btn btn-danger" @click="deleteTask(task.id)">DELETE</button>
-          </h1>
-        </div>
+    <div class="row">
+      <div class="col-md-6">
+        <Email />
       </div>
     </div>
   </div>
@@ -32,10 +39,12 @@
 import axios from "axios";
 import swal from "sweetalert";
 import AllTasks from "@/components/Tasks";
+import Email from "@/components/Email";
 export default {
   name: "add-post",
   components: {
-    AllTasks: AllTasks
+    AllTasks: AllTasks,
+    Email: Email
   },
   data() {
     return {
