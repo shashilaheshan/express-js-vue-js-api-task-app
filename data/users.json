@@ -1,0 +1,35 @@
+{
+  "users": [
+    {
+      "name": "shashila heshan",
+      "age": 25
+    },
+    {
+      "name": "shashila heshan8",
+      "age": 28
+    },
+    {
+      "name": "shashila heshan7",
+      "age": 27
+    },
+    {
+      "name": "shashila heshan",
+      "age": 25
+    },
+    {
+      "name": "shashila heshan",
+      "age": 25
+    }
+  ],
+  "departments": [
+    {
+      "name": "Dtech"
+    },
+    {
+      "name": "wso2"
+    },
+    {
+      "name": "99x tech"
+    }
+  ]
+}
